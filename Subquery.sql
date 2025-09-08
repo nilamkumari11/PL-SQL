@@ -9,3 +9,10 @@ WHERE e2.age >= e1.age );
 SELECT CustomerID, SUM(Amount) 
 FROM Orders 
 GROUP BY CustomerID;
+
+-- You have a table named Orders with columns OrderID, CustomerID, OrderDate, and Amount. Write an SQL query to find the customers who placed more than 5 orders.
+
+SELECT CustomerID, COUNT(OrderID) AS Orders 
+FROM Orders
+GROUP BY CustomerID
+WHERE COUNT(OrderID) > 5;
